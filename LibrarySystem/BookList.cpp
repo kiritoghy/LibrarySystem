@@ -124,7 +124,7 @@ Book* BookList::merge(Book* left, Book* right)
   Book* tmp = new Book();
   Book* pre = tmp;
   while (left != NULL && right != NULL) {
-    if (left->getName().compare(right->getName()) <= 0) {
+    if (left->getName().toLower().compare(right->getName().toLower()) <= 0) {
       pre->setNext(left);
       left = left->getNext();
     }
